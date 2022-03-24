@@ -1,21 +1,11 @@
 const cb = document.querySelector("input[type=checkbox].required");
+const form = document.querySelector("#mainForm");
+const reqInput = document.querySelectorAll(".required");
 //cb.addEventListener("click", isChecked);
 
-const submitButton = document.querySelector("input[type=submit]");
-//submitButton.addEventListener("click", preventDefault);
+form.addEventListener('submit', validateForm);
 
-const form = document.querySelector("#mainForm");
-//form.addEventListener('submit', validateForm);
-
-const reqInput = document.querySelectorAll(".required");
-
-//const ev = submitButton.addEventListener("click", preventDefault);
-
-function preventDefault2(){
-    alert("Form was submitted");
-}
-
-form.addEventListener('submit', (e) => {
+function validateForm(e) {
     if (reqInput[0].value === "" || reqInput[0].value == null) {
         alert("Title is not filled. You can not submit");
         e.preventDefault();
@@ -29,10 +19,7 @@ form.addEventListener('submit', (e) => {
         alert("Checkbox is not checked. You can not submit");
         e.preventDefault();
     }
-});
-
-
-
+}
 
 function isChecked(){
     if(document.querySelector("input[type=checkbox].required").checked){
