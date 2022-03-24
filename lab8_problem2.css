@@ -70,3 +70,12 @@ form p {
    background-color: #7f8dad;
 }
 
+/*input:hover, textArea:hover, select:hover, .box:hover, .rectangle:hover{*/
+/*   background-color: #7fadab;*/
+/*}*/
+
+.test{
+   background: red;
+}
+
+
