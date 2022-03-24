@@ -1,23 +1,29 @@
-const form = document.querySelector("#mainForm");
-const reqInput = document.querySelectorAll(".required");
-form.addEventListener('submit', validateForm);
+document.addEventListener("DOMContentLoaded", () => {
 
-function validateForm(e) {
-    //Check if title is blank
-    if (reqInput[0].value === "" || reqInput[0].value == null) {
-        reqInput[0].parentNode.classList.add("highlight");      //Add to parent
-        reqInput[0].classList.add("highlight");                 //Add to child to so that both get colored
-        e.preventDefault();
+    //Get form and required fields
+    const form = document.querySelector("#mainForm");
+    const required = document.querySelectorAll(".required");
+    form.addEventListener('submit', validateForm);      //Add Listener to submit form
+
+    function validateForm(e) {
+        //Check if title is blank
+        if (required[0].value === "" || required[0].value == null) {
+            required[0].parentNode.classList.add("highlight");      //Add to parent
+            required[0].classList.add("highlight");                 //Add to child to so that both get colored
+            e.preventDefault();
+        }
+        //Check if description is blank
+        if (required[1].value === "" || required[1].value == null) {
+            required[1].parentNode.classList.add("highlight");      //Add to parent
+            required[1].classList.add("highlight");                 //Add to child to so that both get colored
+            e.preventDefault();
+        }
+        //Check if checkbox is checked
+        if (!required[2].checked || required[2].value == null) {
+            required[2].parentNode.classList.add("highlight");     //Make surrounding box red
+            e.preventDefault();
+        }
     }
-    //Check if description is blank
-    if (reqInput[1].value === "" || reqInput[1].value == null) {
-        reqInput[1].parentNode.classList.add("highlight");      //Add to parent
-        reqInput[1].classList.add("highlight");                 //Add to child to so that both get colored
-        e.preventDefault();
-    }
-    //Check if checkbox is checked
-    if (!reqInput[2].checked || reqInput[2].value == null) {
-        reqInput[2].parentNode.classList.add("highlight");     //Make surrounding box red
-        e.preventDefault();
-    }
-}
+});
+
+
