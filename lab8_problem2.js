@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
     //Get form and required fields
     const form = document.querySelector("#mainForm");
@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener('submit', validateForm);      //Add Listener to submit form
 
     function validateForm(e) {
+        //Set back fields to default no highlight style
+        required[0].classList.remove("highlight");
+        required[0].parentNode.classList.remove("highlight");
+        required[1].classList.remove("highlight");
+        required[1].parentNode.classList.remove("highlight");
+        required[2].parentNode.classList.remove("highlight");
+
         //Check if title is blank
         if (required[0].value === "" || required[0].value == null) {
             required[0].parentNode.classList.add("highlight");      //Add to parent
