@@ -1,4 +1,4 @@
-    document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     //Get form and required fields
     const form = document.querySelector("#mainForm");
